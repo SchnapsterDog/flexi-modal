@@ -18,7 +18,8 @@
   "author": "Oliver Trajcheski @SchanpsterDog",
   "license": "MIT",
   "dependencies": {
-    "css-loader": "^1.0.0"
+    "css-loader": "^1.0.0",
+    "scss-loader": "0.0.1"
   },
   "repository": {
     "type": "git",

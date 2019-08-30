@@ -49,7 +49,7 @@ module.exports = [
     }
   }),
   merge(config, {
-    entry: path.resolve(__dirname + '/src/Component.vue'),
+    entry: path.resolve(__dirname + '/src/FlexiModal.vue'),
     output: {
       filename: 'flexi-modal.js',
       libraryTarget: 'umd',

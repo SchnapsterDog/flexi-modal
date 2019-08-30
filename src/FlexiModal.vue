@@ -10,13 +10,10 @@
         <span class="text-red fs-40 mmt-20 mb-30">{{ headerMessage }}</span>
       </div>
       <div class="description custom-padding">
-        <p>
-        <strong> {{ warningMessage }} </strong>
-        </p>
+        <p><strong> {{ warningMessage }} </strong></p>
         <div class="page"
           v-for="(value, key) in checkBoxes" 
-          :key="key"
-        >
+          :key="key">
           <div class="page__toggle">
             <label class="toggle">
               <input class="toggle__input" type="checkbox">
@@ -44,8 +41,8 @@
 </template>
 
 <script>
-import Modal from './ModalPlugin';
-import Footer from './parts/Footer';
+import Modal from './plugin';
+import Footer from './parts/Footer.vue';
 
 export default {
   props: {
@@ -92,118 +89,71 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  .overlay {
-      visibility: hidden;
-      position: absolute;
-      top:0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0, 0, 0, .4);
-      transition: opacity .3s;
-      opacity: 0;
-  }
-
-  .overlay:target {
-      visibility: visible;
-      opacity: 1;
-  }
-
-  .modal {
-      position: relative;
-      width: 700px;
-      max-width: 80%;
-      background: white;
-      border-radius: 4px;
-      box-shadow: 0 5px 11px rgba(36, 37, 38, 0.08);
-      display: flex;
-      flex-direction: column;
-  }
-
-  .content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-
-  .modal .close {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      color: grey;
-      text-decoration: none;
-  }
-
-  .overlay .cancel {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-  }
-
-  footer:empty {
-      display:none;
-  }
-
-  
-  
-.icon {
-  font-size: 7rem;
+<style scoped>
+.overlay {
+  visibility: hidden;
+  position: absolute;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .4);
+  transition: opacity .3s;
+  opacity: 0;
 }
 
-.text-red {
-  color: #de5a5a;
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
 }
 
-.def-padding {
-  padding: 1em 2.5em;
+.modal {
+  position: relative;
+  width: 700px;
+  max-width: 80%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 5px 11px rgba(36, 37, 38, 0.08);
+  display: flex;
+  flex-direction: column;
 }
 
-.mt-6 {
-    margin-top: 6px;
-  }
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+  
 
+.modal .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: grey;
+  text-decoration: none;
+}
 
-  .mb-30 {
-    margin-bottom: 30px;
-  }
+.overlay .cancel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
-  .mmt-20 {
-    margin-top: -20px;
-  }
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: #f3ecec solid 1px;
+  background-color: #f7f7f7;
+}
 
-  .p-10 {
-    padding: 10px 0;
-  }
-
-  .p-20 {
-    padding: 20px;
-  }
-
-
-  .fs-40 {
-    font-size: 40px;
-  }
-
-  .custom-padding {
-    padding: 10px 40px;
-  }
-
-  .description {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-top: #f3ecec solid 1px;
-    background-color: #f7f7f7;
-  }
-
-
-
+.custom-padding {
+  padding: 10px 40px;
+}
 
 .toggle{
   --uiToggleSize: var(--toggleSize, 50px);
@@ -309,23 +259,9 @@ The arrow size and position depends from sizes of square because I needed an arr
   transition: width .1s ease-out .2s, height .2s ease-out;
 }
 
-/*
-=====
-LEVEL 2. PRESENTATION STYLES
-=====
-*/
-
-/* 
-The demo skin
-*/
-
 .toggle__label:before, .toggle__label:after{
   border-radius: 0px;
 }
-
-/* 
-The animation of switching states
-*/
 
 .toggle__input:not(:disabled) ~ .toggle__label:before,
 .toggle__input:not(:disabled) ~ .toggle__label:after{
@@ -363,21 +299,54 @@ The animation of switching states
   transition: opacity .1s ease-out .3s, width .1s ease-out .5s, height .2s ease-out .3s;
 }
 
-/*
-=====
-LEVEL 3. SETTINGS
-=====
-*/
-
 .toggle{
   --toggleColor:#de5a5a;
   --toggleBgColor:#de5a5a;
   --toggleSize: 50px;
 }
 
+footer:empty {
+  display:none;
+}
+
 strong {
   color: #ab4242;
 }
 
+.icon {
+  font-size: 7rem;
+}
+
+.text-red {
+  color: #de5a5a;
+}
+
+.def-padding {
+  padding: 1em 2.5em;
+}
+
+.mt-6 {
+    margin-top: 6px;
+  }
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.mmt-20 {
+  margin-top: -20px;
+}
+
+.p-10 {
+  padding: 10px 0;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.fs-40 {
+  font-size: 40px;
+}
 </style>
 

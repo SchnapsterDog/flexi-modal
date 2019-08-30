@@ -1,19 +1,15 @@
-import Component from './Component'
-
 let Plugin = {
   install: function (Vue, options = {}) {
-      Vue.component('modal', Component)
+    Vue.component('modal', FlexiModal) // init Component
+    Plugin.events = new Vue(); // init events
 
-      Plugin.events = new Vue();
-
-      Vue.prototype.$modal = {
-          show(name, params = {}) {
+      Vue.prototype.$modal = { // extend $modal
+          show(name, params = {}) { // set modal name --name=flexi-modal, params--optional
             location.hash = name;
-            
             Plugin.events.$emit('show', params)
           },
 
-          hide(name) {
+          hide(name) { // hide modal
             location.hash = '#'
           },
 

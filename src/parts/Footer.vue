@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Modal from '../ModalPlugin';
+import Modal from '../plugin';
 export default {
   props: {
     confirmButtonMessage: {// header message --
@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .flexi-footer {
   display: flex;
   justify-content: space-around;
