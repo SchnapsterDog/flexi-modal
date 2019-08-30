@@ -1,3 +1,5 @@
+import FlexiModal from './FlexiModal'
+
 let Plugin = {
   install: function (Vue, options = {}) {
     Vue.component('modal', FlexiModal) // init Component
