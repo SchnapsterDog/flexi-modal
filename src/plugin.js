@@ -1,14 +1,12 @@
-import FlexiModal from './FlexiModal'
-
 let Plugin = {
   install: function (Vue, options = {}) {
-    Vue.component('modal', FlexiModal) // init Component
+    Vue.component('flexi-modal', FlexiModal) // init Component
     Plugin.events = new Vue(); // init events
 
       Vue.prototype.$modal = { // extend $modal
           show(name, params = {}) { // set modal name --name=flexi-modal, params--optional
             location.hash = name;
-            Plugin.events.$emit('show', params)
+            // Plugin.events.$emit('show', params)
           },
 
           hide(name) { // hide modal
@@ -19,9 +17,9 @@ let Plugin = {
             return new Promise((resolve, reject) => {
               this.show('flexi-modal', { message });
 
-              Plugin.events.$on('clicked', confirmed => {
-                resolve(confirmed);
-              })
+              // Plugin.events.$on('clicked', confirmed => {
+              // resolve(confirmed);
+              // })
             });
           }
       }
