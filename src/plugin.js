@@ -1,8 +1,6 @@
-import FlexiModal from './FlexiModal'
-
 let Plugin = {
   install: function (Vue, options = {}) {
-    Vue.component('modal', FlexiModal) // init Component
+    Vue.component('flexi-modal', FlexiModal) // init Component
     Plugin.events = new Vue(); // init events
 
       Vue.prototype.$modal = { // extend $modal
@@ -28,5 +26,5 @@ let Plugin = {
   }
 }
 
-export default Plugin
+export default Plugin;
 

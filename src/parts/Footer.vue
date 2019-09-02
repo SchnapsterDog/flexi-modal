@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script>
+<script scoped>
 import Modal from '../plugin';
 export default {
   props: {
@@ -61,6 +61,7 @@ export default {
   width: 160px;
   height: 25px;
   border: 1px solid #fc8d83;
+  text-align: center;
   
   @media (max-width: 767.98px) {
     width: 100px;
@@ -80,6 +81,7 @@ export default {
   width: 160px;
   height: 25px;
   border: 1px solid;
+  text-align: center;
   
   @media (max-width: 767.98px) {
     width: 100px;

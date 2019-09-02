@@ -1,10 +1,9 @@
 {
   "name": "flexi-modal",
-  "version": "1.0.0",
-  "description": "Vue Plugin Modal",
-  "main": "plugin.js",
+  "version": "0.0.2",
+  "description": "A Vue.js Modal Plugin",
+  "main": "dist/flexi-modal.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf ./dist && webpack --config ./webpack.config.js"
   },
   "keywords": [
@@ -13,13 +12,15 @@
     "plugin",
     "component",
     "reusable",
-    "easy"
+    "easy",
+    "flexbox",
+    "component",
+    "flexi vue"
   ],
   "author": "Oliver Trajcheski @SchanpsterDog",
   "license": "MIT",
   "dependencies": {
-    "css-loader": "^1.0.0",
-    "scss-loader": "0.0.1"
+    "css-loader": "^1.0.0"
   },
   "repository": {
     "type": "git",
