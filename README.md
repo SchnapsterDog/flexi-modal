@@ -24,7 +24,7 @@ Once installed, it can be used in every Vue component easy.
       name="flexi-modal"
       headerMessage="Are you sure?"
       warningMessage="Warning, this cant be undone!"
-      checkBoxes="[{text: Keep this information}, {text: Keep history of transaction}]"
+      :checkBoxes="[{text: 'Keep this information'}, {text: 'Keep history of transaction'}]"
       confirmButtonMessage="DDDD"
       declineButtonMessage="Decline Button Message"
 ></flexi-modal>
