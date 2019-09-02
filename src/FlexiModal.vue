@@ -32,6 +32,7 @@
       <footer class="mt-6">
         <app-footer
           :confirmButtonMessage="confirmButtonMessage"
+          @update-modal-state="updateModalState"
           :declineButtonMessage="declineButtonMessage"
         ></app-footer>
       </footer>
@@ -78,14 +79,15 @@ export default {
   },
   components: { // import parts of the component
     appFooter: Footer
-  },
-
-  beforeMount() {
-    Modal.events.$on('show', params => {
-      this.headerMessage = params.message
-    })
-  },
-    
+  }, 
+  methods: {
+    setModalName(name) { // helper function
+      return location.hash = name;
+    },
+    updateModalState(confirmed) { // return true on confirmed action 
+      confirmed ? this.setModalName(this.name) && alert('Action Confirmed') : this.setModalName('#');
+    }
+  }
 }
 </script>
 

@@ -6,7 +6,7 @@ let Plugin = {
       Vue.prototype.$modal = { // extend $modal
           show(name, params = {}) { // set modal name --name=flexi-modal, params--optional
             location.hash = name;
-            Plugin.events.$emit('show', params)
+            // Plugin.events.$emit('show', params)
           },
 
           hide(name) { // hide modal
@@ -17,14 +17,14 @@ let Plugin = {
             return new Promise((resolve, reject) => {
               this.show('flexi-modal', { message });
 
-              Plugin.events.$on('clicked', confirmed => {
-                resolve(confirmed);
-              })
+              // Plugin.events.$on('clicked', confirmed => {
+              // resolve(confirmed);
+              // })
             });
           }
       }
   }
 }
 
-export default Plugin;
+export default Plugin
 
