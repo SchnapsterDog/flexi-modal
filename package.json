@@ -8,15 +8,14 @@
   },
   "keywords": [
     "vue",
-    "javascript",
-    "date",
-    "flexbox",
-    "table",
-    "css",
-    "flexitable",
+    "modal",
+    "plugin",
     "component",
-    "flexi vue",
-    "design"
+    "reusable",
+    "easy",
+    "flexbox",
+    "component",
+    "flexi vue"
   ],
   "author": "Oliver Trajcheski @SchanpsterDog",
   "license": "MIT",
