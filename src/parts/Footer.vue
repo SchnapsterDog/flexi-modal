@@ -24,8 +24,7 @@ export default {
   },
   methods: {
     handleClick(confirmed) {
-      Modal.events.$emit('clicked', confirmed)
-      this.$modal.hide()
+      this.$emit('update-modal-state', confirmed);
     }
   }
 }
