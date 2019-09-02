@@ -12,6 +12,7 @@
       <div class="description custom-padding">
         <p><strong> {{ warningMessage }} </strong></p>
         <div class="page"
+          v-show="checkBoxesAllowed"
           v-for="(value, key) in checkBoxes" 
           :key="key">
           <div class="page__toggle">
@@ -32,8 +33,8 @@
       <footer class="mt-6">
         <app-footer
           :confirmButtonMessage="confirmButtonMessage"
-          @update-modal-state="updateModalState"
           :declineButtonMessage="declineButtonMessage"
+          @update-modal-state="updateModalState"
         ></app-footer>
       </footer>
 
@@ -59,6 +60,10 @@ export default {
       type: String,
       default: 'Warning, this cannot be undone!'
     },
+    checkBoxesAllowed: {
+      type: Boolean,
+      default: false
+    },
     checkBoxes: {// array piece of data that contain text messages for checkboxes
       type: Array,
       default: () => {
@@ -66,7 +71,7 @@ export default {
           { text: 'Remove all trade history related information' },
           { text: 'Remove stock exchanges database' }
         ]  
-      }
+      },
     },
     confirmButtonMessage: {// header message --
       type: String,
