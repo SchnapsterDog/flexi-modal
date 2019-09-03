@@ -27,19 +27,40 @@ Once installed, it can be used in every Vue component easy.
       confirmButtonMessage="DDDD"
       declineButtonMessage="Decline Button Message"
       :checkBoxesAllowed="true"
-      :checkBoxes="[{text: 'Keep this information', confirmed: false }, {text: 'Keep history of transaction', confirmed: false}]"
-      @is-valid="checkBoxes"
+      :checkBoxes="checkBoxes"
+      @is-valid="isValid"
 ></flexi-modal>
 ```
 
-You can listen for is-valid event that return true if provided checkboxes are marked in the modal
+Enabling of checkboxes (optional) // default option false
 
+```html
+ :checkBoxesAllowed="true"
+ :checkBoxes="checkBoxes"
+```
+
+```js
+data: () { 
+  return {
+    checkBoxes: [ 
+      { text: 'Remove all trade history related information', confirmed: false },
+      { text: 'Remove stock exchanges database', confirmed: false }
+    ]  
+  }
+}
+```
+
+####Event Listeners 
+
+Listen for 'is-valid' event which returns true if all checkboxes are marked
+
+```js
 methods: {
-  checkBoxes(valid) {
+  isValid(valid) {
     valid ? alert('Action Confirmed') : alert('Please Mark the checkboxes in order to proceed the request');
   }
 }
-
+```
 
 
 ##### API
