@@ -108,7 +108,7 @@ export default {
     updateModalState(confirmed) { // return true on confirmed action 
       if(confirmed) {
         !this.isValid ? this.setModalName(this.name) : this.setModalName('#');
-      } else { this.setModalName('#'); }
+      } else { this.setModalName('#'); return; }
       this.$emit('is-valid', this.isValid);
     }
   }
