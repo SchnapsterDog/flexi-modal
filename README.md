@@ -24,12 +24,22 @@ Once installed, it can be used in every Vue component easy.
       name="flexi-modal"
       headerMessage="Are you sure?"
       warningMessage="Warning, this cant be undone!"
-      :checkBoxesAllowed="true"
-      :checkBoxes="[{text: 'Keep this information'}, {text: 'Keep history of transaction'}]"
       confirmButtonMessage="DDDD"
       declineButtonMessage="Decline Button Message"
+      :checkBoxesAllowed="true"
+      :checkBoxes="[{text: 'Keep this information', confirmed: false }, {text: 'Keep history of transaction', confirmed: false}]"
+      @is-valid="checkBoxes"
 ></flexi-modal>
 ```
+
+You can listen for is-valid event that return true if provided checkboxes are marked in the modal
+
+methods: {
+  checkBoxes(valid) {
+    valid ? alert('Action Confirmed') : alert('Please Mark the checkboxes in order to proceed the request');
+  }
+}
+
 
 
 ##### API
