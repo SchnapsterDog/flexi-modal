@@ -20,6 +20,8 @@ Vue.use(FlexiModal);
 Once installed, it can be used in every Vue component easy.
 
 ```html
+<a href="#flexi-modal">Open Modal</a>
+
 <flexi-modal 
       name="flexi-modal"
       headerMessage="Are you sure?"
