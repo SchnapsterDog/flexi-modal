@@ -17,7 +17,7 @@
           :key="key">
           <div class="page__toggle">
             <label class="toggle">
-              <input class="toggle__input" type="checkbox">
+              <input @click="updateCheckbox(key)" class="toggle__input" type="checkbox">
               <span class="toggle__label">
                 <span class="toggle__text">{{ value.text }}</span>
               </span>
@@ -68,8 +68,8 @@ export default {
       type: Array,
       default: () => {
         return [
-          { text: 'Remove all trade history related information' },
-          { text: 'Remove stock exchanges database' }
+          { text: 'Remove all trade history related information', confirmed: false },
+          { text: 'Remove stock exchanges database', confirmed: false }
         ]  
       },
     },
@@ -85,12 +85,31 @@ export default {
   components: { // import parts of the component
     appFooter: Footer
   }, 
+  
+  computed: {
+    isValid() { //check if checkboxes are marked --return true if all are chekecked
+      let checked = [];
+      for(let i=0; i < this.checkBoxes.length; i++){
+        if(this.checkBoxes[i].confirmed){
+          checked.push(this.checkBoxes[i].confirmed);
+        }
+      }
+      return this.checkBoxes.length === checked.length;
+    }
+  },
+
   methods: {
     setModalName(name) { // helper function
       return location.hash = name;
     },
+    updateCheckbox(key) { // update confirmed property from checkBoxes array
+      this.checkBoxes[key].confirmed =! this.checkBoxes[key].confirmed;
+    },
     updateModalState(confirmed) { // return true on confirmed action 
-      confirmed ? this.setModalName(this.name) && alert('Action Confirmed') : this.setModalName('#');
+      if(confirmed) {
+        !this.isValid ? this.setModalName(this.name) : this.setModalName('#');
+      } else { this.setModalName('#'); }
+      this.$emit('is-valid', this.isValid);
     }
   }
 }
