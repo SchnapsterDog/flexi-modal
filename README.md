@@ -50,7 +50,7 @@ data: () {
 }
 ```
 
-####Event Listeners 
+#### Event Listeners 
 
 Listen for 'is-valid' event which returns true if all checkboxes are marked
 
