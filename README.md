@@ -24,6 +24,7 @@ Once installed, it can be used in every Vue component easy.
 
 <flexi-modal 
       name="flexi-modal"
+      modalType="false"
       headerMessage="Are you sure?"
       warningMessage="Warning, this cant be undone!"
       confirmButtonMessage="Proceed"
@@ -31,14 +32,33 @@ Once installed, it can be used in every Vue component easy.
       :checkBoxesAllowed="true"
       :checkBoxes="checkBoxes"
       @is-valid="isValid"
+
+```
+
+1. Name property is mandatory. Without providing it, the component will not work.
+2. warningMessage, checkBoxesAllowed and checkBoxes is available only for Error Modal(See MODAL TYPE)
+
+#### Modal Type
+There are two type of modal that could be use, Error and Confirm Modal.
+Default value "false", that mean Error Modal. Confirm modal doesnt 
+support checkboxes and its validation. 
+
+```html
+<flexi-modal 
+      name="flexi-modal"
+      :modalType="false"
 ></flexi-modal>
 ```
 
 Enabling of checkboxes (optional) // default option false
 
 ```html
- :checkBoxesAllowed="true"
- :checkBoxes="checkBoxes"
+<flexi-modal 
+      name="flexi-modal"
+      :modalType="false"
+      :checkBoxesAllowed="true"
+      :checkBoxes="checkBoxes"
+></flexi-modal
 ```
 
 ```js

@@ -1,10 +1,10 @@
 <template>
   <div class="flexi-footer footer-padding">
     <span>
-      <a @click="handleClick(true)" class="buttons">{{ confirmButtonMessage }}</a>
+      <a @click="handleClick(true)" class="buttons" :class="{'btn-red': !modalType }">{{ confirmButtonMessage }}</a>
     </span>
     <span>
-      <a @click="handleClick(false)" class="buttons-transparent">{{ declineButtonMessage }}</a>
+      <a @click="handleClick(false)" class="buttons-transparent" :class="{'btn-red': !modalType }">{{ declineButtonMessage }}</a>
     </span>
   </div>
 </template>
@@ -13,14 +13,18 @@
 import Modal from '../plugin';
 export default {
   props: {
-    confirmButtonMessage: {// header message --
+    confirmButtonMessage: { // header message --
       type: String,
       default: 'DELETE'
     },
-    declineButtonMessage: {// warning message --
+    declineButtonMessage: { // warning message --
       type: String,
       default: 'GO BACK'
     },
+    modalType: { // modal type --error/warning modal false, confirmation modal true 
+      type: Boolean,
+      default: false
+    }
   },
   methods: {
     handleClick(confirmed) {
@@ -49,7 +53,7 @@ export default {
 }
 
 .buttons {
-	background-color: #fc8d83;
+	background-color:#78b13f;
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
@@ -66,6 +70,10 @@ export default {
     width: 100px;
     margin-bottom: 20px;
   }
+}
+
+.btn-red {
+  background-color:#fc8d83; 
 }
 
 .buttons-transparent {
@@ -90,11 +98,17 @@ export default {
 
 .buttons-transparent:hover {
   color: white;
-  background-color:#f7c3c3;
+  background-color:#78b13f;
+  opacity: .3;
 }
 
 .buttons:hover {
-	background-color:#e4685d;
+	background-color: #78b13f;
+  opacity: .3;
+}
+
+.btn-red:hover {
+  background-color: #e4685d;
 }
 
 .buttons:active {
