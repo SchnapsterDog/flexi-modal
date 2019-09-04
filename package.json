@@ -1,6 +1,6 @@
 {
   "name": "flexi-modal",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "description": "A Vue.js Modal Plugin",
   "main": "dist/flexi-modal.js",
   "scripts": {

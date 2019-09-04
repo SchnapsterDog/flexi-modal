@@ -9,7 +9,7 @@
         <span class="icon text-red">&times;</span>
         <span class="text-red fs-40 mmt-20 mb-30">{{ headerMessage }}</span>
       </div>
-      <div class="description custom-padding">
+      <div class="description custom-padding" :class="{'text-center': !this.checkBoxesAllowed}">
         <p><strong> {{ warningMessage }} </strong></p>
         <div class="page"
           v-show="checkBoxesAllowed"
@@ -88,6 +88,7 @@ export default {
   
   computed: {
     isValid() { //check if checkboxes are marked --return true if all are chekecked
+      if(!this.checkBoxesAllowed) { return true; } //turn off validation in checkboxes are not allowed 
       let checked = [];
       for(let i=0; i < this.checkBoxes.length; i++){
         if(this.checkBoxes[i].confirmed){
@@ -108,7 +109,7 @@ export default {
     updateModalState(confirmed) { // return true on confirmed action 
       if(confirmed) {
         !this.isValid ? this.setModalName(this.name) : this.setModalName('#');
-      } else { this.setModalName('#'); }
+      } else { this.setModalName('#'); return; }
       this.$emit('is-valid', this.isValid);
     }
   }
@@ -175,6 +176,10 @@ export default {
   align-items: flex-start;
   border-top: #f3ecec solid 1px;
   background-color: #f7f7f7;
+}
+
+.text-center {
+  align-items: center;
 }
 
 .custom-padding {
