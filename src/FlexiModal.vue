@@ -88,6 +88,7 @@ export default {
   
   computed: {
     isValid() { //check if checkboxes are marked --return true if all are chekecked
+      if(!this.checkBoxesAllowed) { return true; } //turn off validation in checkboxes are not allowed 
       let checked = [];
       for(let i=0; i < this.checkBoxes.length; i++){
         if(this.checkBoxes[i].confirmed){
