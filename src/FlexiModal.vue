@@ -5,11 +5,29 @@
     <a href="#" class="cancel"></a>
 
     <div class="modal">
-      <div class="content">
-        <span class="icon text-red">&times;</span>
-        <span class="text-red fs-40 mmt-20 mb-30">{{ headerMessage }}</span>
+      <div 
+        class="content" 
+        v-if="modalType">
+          <span class="checkmark"></span>
+          <span
+            class="fs-40 mb-30 mt-20"
+            :class="{'text-red': !modalType }">
+              {{ headerMessage }}
+          </span>
       </div>
-      <div class="description custom-padding" :class="{'text-center': !this.checkBoxesAllowed}">
+      <div 
+        class="content"
+        v-else>
+          <span class="icon text-red">&times;</span>
+          <span 
+            class="fs-40 mb-30 mmt-20"
+            :class="{'text-red': !modalType }">
+              {{ headerMessage }}
+          </span>
+      </div>
+      
+      <div v-if="!modalType"
+           class="description custom-padding" :class="{'text-center': !this.checkBoxesAllowed}">
         <p><strong> {{ warningMessage }} </strong></p>
         <div class="page"
           v-show="checkBoxesAllowed"
@@ -34,6 +52,7 @@
         <app-footer
           :confirmButtonMessage="confirmButtonMessage"
           :declineButtonMessage="declineButtonMessage"
+          :modalType="modalType"
           @update-modal-state="updateModalState"
         ></app-footer>
       </footer>
@@ -51,6 +70,10 @@ export default {
     name: { // name of the modal --customize like error-modal/confirm-modal
       type: String,
       required: true
+    },
+    modalType: { // modal type --error/warning modal false, confirmation modal true 
+      type: Boolean,
+      default: false
     },
     headerMessage: {// header message --
       type: String,
@@ -118,6 +141,8 @@ export default {
 
 <style scoped>
 .overlay {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
   visibility: hidden;
   position: absolute;
   top:0;
@@ -154,8 +179,16 @@ export default {
   justify-content: center;
   flex-direction: column;
 }
-  
 
+.checkmark {
+  display: inline-block;
+  transform: rotate(45deg);
+  height: 6rem;
+  width: 2rem;
+  border-bottom: 15px solid #78b13f;
+  border-right: 15px solid #78b13f;
+}
+  
 .modal .close {
   position: absolute;
   top: 15px;
@@ -362,6 +395,10 @@ strong {
 
 .mb-30 {
   margin-bottom: 30px;
+}
+
+.mt-20 {
+  margin-top: 20px;
 }
 
 .mmt-20 {
