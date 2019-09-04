@@ -9,7 +9,7 @@
         <span class="icon text-red">&times;</span>
         <span class="text-red fs-40 mmt-20 mb-30">{{ headerMessage }}</span>
       </div>
-      <div class="description custom-padding">
+      <div class="description custom-padding" :class="{'text-center': !this.checkBoxesAllowed}">
         <p><strong> {{ warningMessage }} </strong></p>
         <div class="page"
           v-show="checkBoxesAllowed"
@@ -175,6 +175,10 @@ export default {
   align-items: flex-start;
   border-top: #f3ecec solid 1px;
   background-color: #f7f7f7;
+}
+
+.text-center {
+  align-items: center;
 }
 
 .custom-padding {
