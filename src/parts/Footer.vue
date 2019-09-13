@@ -59,6 +59,9 @@ export default {
 }
 
 .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 	background-color:#78b13f;
 	cursor: pointer;
 	color: #ffffff;
@@ -82,6 +85,9 @@ export default {
 }
 
 .buttons-transparent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: transparent;
   cursor: pointer;
   color: grey;
