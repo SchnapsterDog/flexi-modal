@@ -1,9 +1,9 @@
 <template>
   <div class="flexi-footer footer-padding">
-    <span>
+    <span class="flexi-button">
       <a @click="handleClick(true)" class="buttons" :class="{'btn-red': !modalType }">{{ confirmButtonMessage }}</a>
     </span>
-    <span>
+    <span class="flexi-button">
       <a @click="handleClick(false)" class="buttons-transparent" :class="{'btn-red': !modalType }">{{ declineButtonMessage }}</a>
     </span>
   </div>
@@ -52,9 +52,14 @@ export default {
   padding-right: 20px;
 }
 
+.flexi-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .buttons {
 	background-color:#78b13f;
-	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
 	font-family: Arial;
@@ -78,7 +83,6 @@ export default {
 
 .buttons-transparent {
   background: transparent;
-  display: inline-block;
   cursor: pointer;
   color: grey;
   font-family: Arial;
