@@ -24,7 +24,7 @@ Once installed, it can be used in every Vue component easy.
 
 <flexi-modal 
       name="flexi-modal"
-      modalType="false"
+      :modalType="false"
       headerMessage="Are you sure?"
       warningMessage="Warning, this cant be undone!"
       confirmButtonMessage="Proceed"
@@ -32,6 +32,7 @@ Once installed, it can be used in every Vue component easy.
       :checkBoxesAllowed="true"
       :checkBoxes="checkBoxes"
       @is-valid="isValid"
+  ></flexi-modal>
 
 ```
 

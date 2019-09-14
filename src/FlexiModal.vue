@@ -1,14 +1,14 @@
 <template>
   <div :id="name"
-       class="overlay"
+       class="overlay-modal"
   >
-    <a href="#" class="cancel"></a>
+    <a href="#" class="cancel-button"></a>
 
-    <div class="modal">
+    <div class="flexi-modal">
       <div 
-        class="content" 
+        class="flexi-modal-content" 
         v-if="modalType">
-          <span class="checkmark"></span>
+          <span class="flexi-checkmark"></span>
           <span
             class="fs-40 mb-30 mt-20"
             :class="{'text-red': !modalType }">
@@ -16,7 +16,7 @@
           </span>
       </div>
       <div 
-        class="content"
+        class="flexi-modal-content"
         v-else>
           <span class="icon text-red">&times;</span>
           <span 
@@ -27,7 +27,7 @@
       </div>
       
       <div v-if="!modalType"
-           class="description custom-padding" :class="{'text-center': !this.checkBoxesAllowed}">
+           class="flexi-description custom-padding" :class="{'text-center': !this.checkBoxesAllowed}">
         <p><strong> {{ warningMessage }} </strong></p>
         <div class="page"
           v-show="checkBoxesAllowed"
@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <a href="#" class="close">
+      <a href="#" class="close-button">
         &times;
       </a>
 
@@ -140,7 +140,7 @@ export default {
 </script>
 
 <style scoped>
-.overlay {
+.overlay-modal {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   visibility: hidden;
@@ -157,12 +157,12 @@ export default {
   opacity: 0;
 }
 
-.overlay:target {
+.overlay-modal:target {
   visibility: visible;
   opacity: 1;
 }
 
-.modal {
+.flexi-modal {
   position: relative;
   width: 700px;
   max-width: 80%;
@@ -173,14 +173,14 @@ export default {
   flex-direction: column;
 }
 
-.content {
+.flexi-modal-content {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.checkmark {
+.flexi-checkmark {
   display: inline-block;
   transform: rotate(45deg);
   height: 6rem;
@@ -189,7 +189,7 @@ export default {
   border-right: 15px solid #78b13f;
 }
   
-.modal .close {
+.flexi-modal .close-button {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -197,13 +197,13 @@ export default {
   text-decoration: none;
 }
 
-.overlay .cancel {
+.overlay-modal .cancel-button {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.description {
+.flexi-description {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -417,4 +417,3 @@ strong {
   font-size: 40px;
 }
 </style>
-
