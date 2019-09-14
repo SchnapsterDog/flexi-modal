@@ -140,18 +140,6 @@ export default {
 </script>
 
 <style scoped>
-* {
-  -webkit-box-sizing: content-box;
-     -moz-box-sizing: content-box;
-          box-sizing: content-box;
-}
-*:before,
-*:after {
-  -webkit-box-sizing: content-box;
-     -moz-box-sizing: content-box;
-          box-sizing: content-box;
-}
-
 .overlay-modal {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -172,6 +160,14 @@ export default {
 .overlay-modal:target {
   visibility: visible;
   opacity: 1;
+}
+
+.overlay-modal *,
+.overlay-modal *:before,
+.overlay-modal *:after {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
 }
 
 .flexi-modal {
