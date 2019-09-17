@@ -155,6 +155,7 @@ export default {
   background: rgba(0, 0, 0, .4);
   transition: opacity .3s;
   opacity: 0;
+  z-index: 9999;
 }
 
 .overlay-modal:target {
