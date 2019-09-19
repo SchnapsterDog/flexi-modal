@@ -105,6 +105,7 @@ export default {
       default: 'GO BACK'
     },
   },
+  
   components: { // import parts of the component
     appFooter: Footer
   }, 
