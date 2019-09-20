@@ -39,7 +39,6 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  
   @media (max-width: 767.98px) {
     display: flex;
     flex-direction: column;
@@ -75,7 +74,6 @@ export default {
   border: 1px solid #fc8d83;
   text-align: center;
   box-sizing: content-box!important;
-  
   @media (max-width: 767.98px) {
     width: 100px;
     margin-bottom: 20px;
@@ -102,7 +100,6 @@ export default {
   border: 1px solid;
   text-align: center;
   box-sizing: content-box!important;
-  
   @media (max-width: 767.98px) {
     width: 100px;
     margin-bottom: 20px;
