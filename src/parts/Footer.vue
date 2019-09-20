@@ -34,14 +34,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .flexi-footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
   
   @media (max-width: 767.98px) {
-    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
   }
 }
 
