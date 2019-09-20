@@ -73,6 +73,7 @@ export default {
   height: 25px;
   border: 1px solid #fc8d83;
   text-align: center;
+  box-sizing: content-box!important;
   
   @media (max-width: 767.98px) {
     width: 100px;
@@ -99,6 +100,7 @@ export default {
   height: 25px;
   border: 1px solid;
   text-align: center;
+  box-sizing: content-box!important;
   
   @media (max-width: 767.98px) {
     width: 100px;
