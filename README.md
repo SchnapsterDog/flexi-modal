@@ -8,13 +8,14 @@ Vue JS Modal Plugin that could easy be implemented in your code
 npm install flexi-modal --save
 ```
 
-### Usage
-
-Global
+## Usage
 
 ```js
 import FlexiModal from 'flexi-modal';
-Vue.use(FlexiModal);
+
+export default {
+  name: 'someComponent',
+  components: { FlexiModal },
 ```
 
 Once installed, it can be used in every Vue component easy.
@@ -39,7 +40,7 @@ Once installed, it can be used in every Vue component easy.
 1. Name property is mandatory. Without providing it, the component will not work.
 2. warningMessage, checkBoxesAllowed and checkBoxes is available only for Error Modal(See MODAL TYPE)
 
-#### Modal Type
+### Modal Type
 There are two type of modal that could be use, Error and Confirm Modal.
 Default value "false", that mean Error Modal. Confirm modal doesnt 
 support checkboxes and its validation. 
@@ -73,7 +74,7 @@ data: () {
 }
 ```
 
-#### Event Listeners 
+### Event Listeners 
 
 Listen for 'is-valid' event which returns true if all checkboxes are marked
 
@@ -86,7 +87,7 @@ methods: {
 ```
 
 
-##### API
+#### API
 
 | Name        | Type        | Description                                                             |
 | :-----      | :-------    | :----------------------------------------------- 
