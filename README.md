@@ -93,7 +93,7 @@ methods: {
 ```
 
 
-#### API
+### API
 
 | Name                    | Type        | Mandatory     | Description 
 
