@@ -1,6 +1,12 @@
 # Flexi Modal
 
-Vue JS Modal Plugin that could easy be implemented in your code
+Vue JS Modal that could be easy implement in your code. 
+
+## Demo
+
+Demo is uploaded on my server. Check this out:
+
+https://flexivue.info
 
 ## Installation
 
@@ -89,6 +95,16 @@ methods: {
 
 #### API
 
-| Name        | Type        | Description                                                             |
-| :-----      | :-------    | :----------------------------------------------- 
+| Name                    | Type        | Mandatory     | Description 
+
+| :-----                  | :-------    | :--------     |------------------------------- 
+| name                    | String      | Yes           | THis prop is mandatory. Give string name to your modal and invoke it.
+| modalType               | Boolean     | Yes           | true/false. Set true for Confirm and false for Error Modal.
+| headerMessage           | String      | No            | Set message on the Header of the Modal.
+| warningMessage          | String      | No            | This option is only available for modalType=false (ErrorModal)
+| confirmButtonMessage    | String      | No            | Set ConfirmButton title        
+| declineButtonMessage    | String      | No            | Set DeclineButton title
+| checkBoxesAllowed       | Boolean     | No            | true/false. This options is only available for modalType=false (ErrorModal).
+| checkBoxes              | Array       | No            | Set array of checkboxes options that will be loop inside component. avl only if checkBoxedAllowed is true.
+| is-valid                | Event       | /             | Listen for event. Return true if confirmButton is clicked and/or all checkBoxes are marked for modalType=false
 
