@@ -93,7 +93,11 @@ methods: {
 ```
 
 
-### API
+## API
+
+### Props
+
+```
 
 | Name                    | Type        | Mandatory     | Description 
 
@@ -107,4 +111,4 @@ methods: {
 | checkBoxesAllowed       | Boolean     | No            | true/false. This options is only available for modalType=false (ErrorModal).
 | checkBoxes              | Array       | No            | Set array of checkboxes options that will be loop inside component. avl only if checkBoxedAllowed is true.
 | is-valid                | Event       | /             | Listen for event. Return true if confirmButton is clicked and/or all checkBoxes are marked for modalType=false
-
+```
