@@ -46,7 +46,7 @@ Once installed, it can be used in every Vue component easy.
 1. Name property is mandatory. Without providing it, the component will not work.
 2. warningMessage, checkBoxesAllowed and checkBoxes is available only for Error Modal(See MODAL TYPE)
 
-### Modal Type
+## Modal Type
 There are two type of modal that could be use, Error and Confirm Modal.
 Default value "false", that mean Error Modal. Confirm modal doesnt 
 support checkboxes and its validation. 
@@ -80,7 +80,7 @@ data: () {
 }
 ```
 
-### Event Listeners 
+## Event Listeners 
 
 Listen for 'is-valid' event which returns true if all checkboxes are marked
 
@@ -102,7 +102,7 @@ methods: {
 | Name                    | Type        | Mandatory     | Description 
 
 | :-----                  | :-------    | :--------     |------------------------------- 
-| name                    | String      | Yes           | THis prop is mandatory. Give string name to your modal and invoke it.
+| name                    | String      | Yes           | This prop is mandatory. Give string name to your modal and invoke it.
 | modalType               | Boolean     | Yes           | true/false. Set true for Confirm and false for Error Modal.
 | headerMessage           | String      | No            | Set message on the Header of the Modal.
 | warningMessage          | String      | No            | This option is only available for modalType=false (ErrorModal)
