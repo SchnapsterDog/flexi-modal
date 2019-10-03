@@ -1,6 +1,12 @@
 # Flexi Modal
 
-Vue JS Modal Plugin that could easy be implemented in your code
+Vue JS Modal that could be easy implement in your code. 
+
+## Demo
+
+Demo is uploaded on my server. Check this out:
+
+https://flexivue.info
 
 ## Installation
 
@@ -90,5 +96,9 @@ methods: {
 #### API
 
 | Name        | Type        | Description                                                             |
+
 | :-----      | :-------    | :----------------------------------------------- 
+| modalType      | String      | Set Color
+| headerMessage        | Array       | Set rows / headers                            |
+| columns     | Array       | Set columns                                          |
 
