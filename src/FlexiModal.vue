@@ -2,62 +2,68 @@
   <div :id="name"
        class="overlay-modal"
   >
-    <a href="#" class="cancel-button"></a>
+    <slot name="modal">
 
-    <div class="flexi-modal">
-      <div 
-        class="flexi-modal-content" 
-        v-if="modalType">
-          <span class="flexi-checkmark"></span>
-          <span
-            class="fs-40 mb-30 mt-20"
-            :class="{'text-red': !modalType }">
+      <a href="#" class="cancel-button"></a>
+
+      <div class="flexi-modal">
+        <div 
+          class="flexi-modal-content" 
+          v-if="modalType"
+        >
+            <span class="flexi-checkmark"></span>
+            <span
+              class="fs-40 mb-30 mt-20"
+              :class="{'text-red': !modalType }"
+            >
               {{ headerMessage }}
-          </span>
-      </div>
-      <div 
-        class="flexi-modal-content"
-        v-else>
-          <span class="icon text-red">&times;</span>
-          <span 
-            class="fs-40 mb-30 mmt-20"
-            :class="{'text-red': !modalType }">
-              {{ headerMessage }}
-          </span>
-      </div>
-      
-      <div v-if="!modalType"
-           class="flexi-description custom-padding" :class="{'text-center': !this.checkBoxesAllowed}">
-        <p><strong> {{ warningMessage }} </strong></p>
-        <div class="page"
-          v-show="checkBoxesAllowed"
-          v-for="(value, key) in checkBoxes" 
-          :key="key">
-          <div class="page__toggle">
-            <label class="toggle">
-              <input @click="updateCheckbox(key)" class="toggle__input" type="checkbox">
-              <span class="toggle__label">
-                <span class="toggle__text">{{ value.text }}</span>
-              </span>
-            </label>
+            </span>
+        </div>
+        <div 
+          class="flexi-modal-content"
+          v-else
+        >
+            <span class="icon text-red">&times;</span>
+            <span 
+              class="fs-40 mb-30 mmt-20"
+              :class="{'text-red': !modalType }">
+                {{ headerMessage }}
+            </span>
+        </div>
+        
+        <div v-if="!modalType"
+            class="flexi-description custom-padding" :class="{'text-center': !this.checkBoxesAllowed}">
+          <p><strong> {{ warningMessage }} </strong></p>
+          <div class="page"
+            v-show="checkBoxesAllowed"
+            v-for="(value, key) in checkBoxes" 
+            :key="key">
+            <div class="page__toggle">
+              <label class="toggle">
+                <input @click="updateCheckbox(key)" class="toggle__input" type="checkbox">
+                <span class="toggle__label">
+                  <span class="toggle__text">{{ value.text }}</span>
+                </span>
+              </label>
+            </div>
           </div>
         </div>
+
+        <a href="#" class="close-button">
+          &times;
+        </a>
+
+        <footer class="mt-6">
+          <app-footer
+            :confirmButtonMessage="confirmButtonMessage"
+            :declineButtonMessage="declineButtonMessage"
+            :modalType="modalType"
+            @update-modal-state="updateModalState"
+          ></app-footer>
+        </footer>
+
       </div>
-
-      <a href="#" class="close-button">
-        &times;
-      </a>
-
-      <footer class="mt-6">
-        <app-footer
-          :confirmButtonMessage="confirmButtonMessage"
-          :declineButtonMessage="declineButtonMessage"
-          :modalType="modalType"
-          @update-modal-state="updateModalState"
-        ></app-footer>
-      </footer>
-
-    </div>
+    </slot>
   </div>
 </template>
 
