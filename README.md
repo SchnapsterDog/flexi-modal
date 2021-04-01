@@ -1,27 +1,32 @@
-# Flexi Modal
+[[Flexi Modal]](https://akrinum.com)
 
-Vue JS Modal that could be easy implement in your code. 
+[![prs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/SchnapsterDog/flexi-modal/pulls)
+[![npm version](https://img.shields.io/bundlephobia/min/flexi-modal?style=flat-square)](https://www.npmjs.com/package/flexi-modal)
+[![npm](https://img.shields.io/npm/dw/flexi-modal?style=flat-square)](https://www.npmjs.com/package/flexi-modal)
 
-## Demo
 
-Demo is uploaded on my server. Check this out:
+Welcome to [version 0.2.5]() of **Flexi Modal**, an easy to implement, and well maintained **Vue.js** plugin.
 
-https://flexivue.info
+You can support this project by giving it a star, or following the author. :heart:.
 
-## Installation
+## :exclamation::exclamation::exclamation: This is README for FlexiModal component :exclamation::exclamation::exclamation:
 
-```js
-npm install flexi-modal --save
-```
+Flexi Modal vue plugin made by [Oliver](https://akrinum.com)
 
-## Usage
+## ⚙ Installation
+
+- npm install flexi-modal --save
+
+## 🤔 How to use it? 
+
+### Module usage 
 
 ```js
 import FlexiModal from 'flexi-modal';
 
 export default {
   name: 'someComponent',
-  components: { FlexiModal },
+  components: { FlexiModal }
 ```
 
 Once installed, it can be used in every Vue component easy.
@@ -30,16 +35,16 @@ Once installed, it can be used in every Vue component easy.
 <a href="#flexi-modal">Open Modal</a>
 
 <flexi-modal 
-      name="flexi-modal"
-      :modalType="false"
-      headerMessage="Are you sure?"
-      warningMessage="Warning, this cant be undone!"
-      confirmButtonMessage="Proceed"
-      declineButtonMessage="Go Back"
-      :checkBoxesAllowed="true"
-      :checkBoxes="checkBoxes"
-      @is-valid="isValid"
-  ></flexi-modal>
+  name="flexi-modal"
+  :modalType="false"
+  :checkBoxesAllowed="true"
+  :checkBoxes="checkBoxes"
+  headerMessage="Are you sure?"
+  warningMessage="Warning, this cant be undone!"
+  confirmButtonMessage="Proceed"
+  declineButtonMessage="Go Back"
+  @is-valid="isValid"
+/>
 
 ```
 
@@ -53,20 +58,20 @@ support checkboxes and its validation.
 
 ```html
 <flexi-modal 
-      name="flexi-modal"
-      :modalType="false"
-></flexi-modal>
+  name="flexi-modal"
+  :modalType="false"
+/>
 ```
 
 Enabling of checkboxes (optional) // default option false
 
 ```html
 <flexi-modal 
-      name="flexi-modal"
-      :modalType="false"
-      :checkBoxesAllowed="true"
-      :checkBoxes="checkBoxes"
-></flexi-modal
+  :checkBoxes="checkBoxes"
+  :checkBoxesAllowed="true"
+  :modalType="false"
+  :name="flexi-modal"
+/>
 ```
 
 ```js
@@ -92,10 +97,9 @@ methods: {
 }
 ```
 
-
 ## API
 
-### Props
+### ❔ Props & events
 
 ```
 
@@ -112,3 +116,7 @@ methods: {
 | checkBoxes              | Array       | No            | Set array of checkboxes options that will be loop inside component. avl only if checkBoxedAllowed is true.
 | is-valid                | Event       | /             | Listen for event. Return true if confirmButton is clicked and/or all checkBoxes are marked for modalType=false
 ```
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT)

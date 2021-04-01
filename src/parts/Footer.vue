@@ -1,37 +1,46 @@
 <template>
   <div class="flexi-footer footer-padding">
     <span class="flexi-button">
-      <a @click="handleClick(true)" class="buttons" :class="{'btn-red': !modalType }">{{ confirmButtonMessage }}</a>
+      <a
+        class="buttons"
+        :class="{ 'btn-red': !modalType }"
+        v-text="confirmButtonMessage"
+        @click="handleClick(true)"
+      />
     </span>
     <span class="flexi-button">
-      <a @click="handleClick(false)" class="buttons-transparent" :class="{'btn-red': !modalType }">{{ declineButtonMessage }}</a>
+      <a
+        class="buttons-transparent"
+        :class="{ 'btn-red': !modalType }"
+        v-text="declineButtonMessage"
+        @click="handleClick(false)"
+      />
     </span>
   </div>
 </template>
 
-<script scoped>
-import Modal from '../plugin';
+<script>
 export default {
   props: {
-    confirmButtonMessage: { // header message --
+    confirmButtonMessage: {  //header message
       type: String,
-      default: 'DELETE'
+      default: "DELETE"
     },
-    declineButtonMessage: { // warning message --
+    declineButtonMessage: {  //warning message
       type: String,
-      default: 'GO BACK'
+      default: "GO BACK"
     },
-    modalType: { // modal type --error/warning modal false, confirmation modal true 
+    modalType: {  // modal type --error/warning modal false, confirmation modal true
       type: Boolean,
       default: false
-    }
+    },
   },
   methods: {
     handleClick(confirmed) {
-      this.$emit('update-modal-state', confirmed);
+      this.$emit("update-modal-state", confirmed);
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -62,18 +71,18 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-	background-color:#78b13f;
-	cursor: pointer;
-	color: #ffffff;
-	font-family: Arial;
-	font-size: 19px;
-	padding: 21px 76px;
-	text-decoration: none;
+  background-color: #78b13f;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 19px;
+  padding: 21px 76px;
+  text-decoration: none;
   width: 160px;
   height: 25px;
   border: 1px solid #fc8d83;
   text-align: center;
-  box-sizing: content-box!important;
+  box-sizing: content-box !important;
   @media (max-width: 767.98px) {
     width: 100px;
     margin-bottom: 20px;
@@ -81,7 +90,7 @@ export default {
 }
 
 .btn-red {
-  background-color:#fc8d83; 
+  background-color: #fc8d83;
 }
 
 .buttons-transparent {
@@ -99,7 +108,7 @@ export default {
   height: 25px;
   border: 1px solid;
   text-align: center;
-  box-sizing: content-box!important;
+  box-sizing: content-box !important;
   @media (max-width: 767.98px) {
     width: 100px;
     margin-bottom: 20px;
@@ -108,13 +117,13 @@ export default {
 
 .buttons-transparent:hover {
   color: white;
-  background-color:#78b13f;
-  opacity: .3;
+  background-color: #78b13f;
+  opacity: 0.3;
 }
 
 .buttons:hover {
-	background-color: #78b13f;
-  opacity: .3;
+  background-color: #78b13f;
+  opacity: 0.3;
 }
 
 .btn-red:hover {
@@ -122,8 +131,8 @@ export default {
 }
 
 .buttons:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
 </style>
 
